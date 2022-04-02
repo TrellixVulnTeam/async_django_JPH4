@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock extra_css %}
+{% block content %}
+
+
+<div class="container my-5">
+  {% if user.is_authenticated %}
+    <h2 class="text-center">Welcome, {{user.username}}</h2>
+    <p class='lead text-center'>Click here to <a href="accounts/logout">logout</a>!</p>
+    <p  class="text-center">Go to the <a href="{% url 'playground' %}">Playground</a></p>
+  {% else %}
+    <p  class="text-center">Already have an account? Then please <a href="accounts/login">sign in</a>.</p>
+  {% endif %}
+</div>
+
+
+
+{% endblock content %}

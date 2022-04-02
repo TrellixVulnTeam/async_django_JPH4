@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'pokedex/css/fetch_pokedex.css' %}">
+{% endblock extra_css %}
+{% block content %}
+<h2 class="text-center">Pokedex</h2>
+
+<div class="container mt-5 text-dark">
+    <button class="btn btn-primary fetch-btn" onclick='getPokemon()'>Get Data</button>
+
+    <div class="row justify-content-center pokemon-container">
+
+    </div>
+
+</div>
+
+
+
+{% endblock content %}
+{% block extra_js %}
+<script src="{% static 'pokedex/js/fetch_pokedex.js' %}"></script>
+{% endblock extra_js %}

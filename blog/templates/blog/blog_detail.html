@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock extra_css %}
+{% block content %}
+
+<div class="container mt-5 text-dark">
+    <div class="row justify-content-center playground-container">
+        <div class="card col-8 mb-5" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{post.title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">by {{post.author|capfirst}}</h6>
+              <p class="card-text">{{post.content|linebreaks}}</p>
+            </div>
+          </div>
+    </div>
+</div> 
+
+{% endblock content %}
+{% block extra_js %}
+<script src="{% static 'blog/js/blog.js' %}"></script>
+{% endblock extra_js %}

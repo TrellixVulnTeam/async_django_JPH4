@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock extra_css %}
+{% block content %}
+<h2 class="text-center">Welcome to the playground</h2>
+
+<div class="container mt-5 text-dark">
+    <button class="btn btn-primary data-btn" onclick='getPosts()'>Get Data</button>
+
+    <div class="row justify-content-center playground-container">
+
+    </div>
+
+</div> 
+
+
+
+{% endblock content %}
+
+{% block extra_js %}
+<script src="{% static 'blog/js/blog.js' %}"></script>
+{% endblock extra_js %}

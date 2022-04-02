@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="text-center">Pokedex</h2>
+
+<div class="container mt-5 text-dark">
+  <form method="POST">
+    {% csrf_token %}
+    <button class="btn btn-primary aio-btn" type='submit'>Get Data</button>
+  </form>
+  
+  {% if pokedex %}
+    <div class="row justify-content-center">
+    {% for pokemon in pokedex %}
+            <div class="card mx-2 my-2 col-sm-6 col-md-4 col-lg-2" style="width: 18rem;">
+                <img src="{{pokemon.sprites.front_default}}" alt="{{pokemon.name}} sprite">
+                <div class="card-body">
+                  <h5 class="card-title">{{pokemon.name|title}}</h5>
+                  <a class='text-centered' href="{% url 'pokemon_detail' pokemon.id %}">Click here</a>
+                </div>
+            </div>
+    {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  {% endblock content %}

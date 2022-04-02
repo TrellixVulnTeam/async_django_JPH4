@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center">Pokedex</h2>
+<p class='text-center lead'>There are now two pokedex: <a href="{% url 'aiohttp_pokedex' %}">aiohttp Pokedex</a> |  <a href="{% url 'fetch_pokedex' %}">JS fetch Pokedex</a></p>
+{% endblock content %}

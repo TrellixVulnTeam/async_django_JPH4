@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="text-center">{{pokemon.name}}</h2>
+<div class="container mt-5 text-dark">
+    <div class="row justify-content-center">
+        <div class="card mx-2 my-2 col-sm-6 col-md-4 col-lg-2" style="width: 18rem;">
+            <img src="{{pokemon.sprites.front_default}}" alt="{{pokemon.name}} sprite">
+            <div class="card-body">
+                <h5 class="card-title">{{pokemon.name|title}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+  {% endblock content %}

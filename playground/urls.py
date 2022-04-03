@@ -25,4 +25,5 @@ urlpatterns = [
     path('pokedex/', include('pokedex.urls')),
     path('blog/', include('blog.urls')),
     path('api/blog/', include('blog_api.urls')),
+    path('api/todo/', include('todo_api.urls'))
 ]

@@ -10,5 +10,3 @@ class blogDetail(DetailView):
         post = Post.objects.get(pk=self.kwargs['pk'])
         context['post'] = post
         return context
-
-

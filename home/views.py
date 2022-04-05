@@ -17,3 +17,4 @@ from .utils import get_data
 
 async def playground(request):
     return render(request, 'home/playground.html', {'title': "playground"})
+

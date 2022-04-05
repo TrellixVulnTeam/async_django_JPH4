@@ -56,6 +56,15 @@ def getToDo(request, pk):
     serializer = ToDoSerializer(todo, many=False)
     return Response(serializer.data)
 
+@api_view(['POST'])
+def createToDo(request):
+    data = request.data
+    todo = ToDo.objects.create(
+        body=data['body']
+    )
+    serializer = ToDoSerializer(todo, many=False)
+    return Response(serializer.data)
+
 @api_view(['PUT'])
 def updateToDo(request, pk):
     data = request.data # the json data
@@ -64,3 +73,9 @@ def updateToDo(request, pk):
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
+
+@api_view(['DELETE'])
+def deleteToDo(request, pk):
+    todo = ToDo.objects.get(id=pk)
+    todo.delete()
+    return Response('todo was deleted')

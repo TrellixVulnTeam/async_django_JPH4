@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-5c#s16k-j#_)+ur7@kbm0g1k8&7re3*y)*#7dlbazn=%@p4guo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '.herokuapp.com' ,'127.0.0.1']
+ALLOWED_HOSTS = [ 'ci-prep.herokuapp.com' ,'127.0.0.1']
 
 
 # Application definition
@@ -106,13 +106,23 @@ WSGI_APPLICATION = 'playground.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse("postgres://igtxjwaxkjfoqx:4a0bd5f7787f7e026e6980409d9b41bf7c064236a429bbadf5e83dbcf6717fa5@ec2-99-80-170-190.eu-west-1.compute.amazonaws.com:5432/dehsnc0qdi4nlq")
 }
 
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+# DATABASES['default'] = dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

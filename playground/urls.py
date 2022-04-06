@@ -13,4 +13,5 @@ urlpatterns = [
     path('api/blog/', include('blog_api.urls')),
     path('todo/', include('todo.urls')),
     path('api/todo/', include('todo_api.urls')),
+    path('chat/', include('chat.urls')),
 ]

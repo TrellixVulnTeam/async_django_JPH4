@@ -1,20 +1,28 @@
 const htmlEditor = CodeMirror(document.querySelector('.editor .code .html-code'), {
     lineNumbers:true,
     tabSize: 4,
-    mode: "xml"
+    mode: "xml",
+    value: `<h1 class='welcome'>Welcome to the show</h1>
+    `
+
 });
 
 const cssEditor = CodeMirror(document.querySelector('.editor .code .css-code'), {
     lineNumbers:true,
     tabSize: 4,
-    mode: "css"
+    mode: "css",
+    value: `.welcome {
+    color: red;
+    }`
 });
 
 const jsEditor = CodeMirror(document.querySelector('.editor .code .javascript-code'), {
     lineNumbers:true,
     tabSize: 4,
-    mode: "javascript"
+    mode: "javascript",
 });
+
+console.log(htmlEditor)
 
 
 document.querySelector('#run-btn').addEventListener('click', function(){

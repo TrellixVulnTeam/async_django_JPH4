@@ -117,7 +117,7 @@ WSGI_APPLICATION = 'playground.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.parse("postgres://igtxjwaxkjfoqx:4a0bd5f7787f7e026e6980409d9b41bf7c064236a429bbadf5e83dbcf6717fa5@ec2-99-80-170-190.eu-west-1.compute.amazonaws.com:5432/dehsnc0qdi4nlq")
+    'default': dj_database_url.parse("postgres://oysdtazjgfwebf:a127020f076183976c0122de5f1155c32de47277f378f002612454d103fc17fd@ec2-34-246-227-219.eu-west-1.compute.amazonaws.com:5432/dbsg8gfgfi44op")
 }
 
 # DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)

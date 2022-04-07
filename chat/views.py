@@ -9,3 +9,5 @@ def room(request, room_name):
         'room_name': room_name,
         'title': 'Chat Room'
     })
+
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'codemirror/lib/codemirror.css' %}">
+<link rel="stylesheet" href="{% static 'code_editor/css/code_editor_two.css' %}">
+
+{% endblock extra_css %}
+{% block content %}
+
+<textarea id='codemirror-textarea'></textarea>
+
+
+{% endblock content %}
+
+{% block extra_js %}
+<script src="{% static 'codemirror/lib/codemirror.js' %}"></script>
+<script src="{% static 'codemirror/mode/xml/xml.js' %}"></script>
+<script src="{% static 'codemirror/mode/css/css.js' %}"></script>
+<script src="{% static 'codemirror/mode/javascript/javascript.js' %}"></script>
+<script src="{% static 'code_editor/js/code_editor_two.js' %}"></script>
+
+{% endblock extra_js %}

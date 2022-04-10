@@ -7,6 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
     {% block extra_css %}{% endblock %}
+    {% block extra_js_head %}{% endblock %}
     {% if title %}
     <title>{{title}}</title>
     {% else %}
@@ -45,7 +46,9 @@
               <a class="dropdown-item" href="{% url 'todo_home' %}">To Do</a>
               <a class="dropdown-item" href="{% url 'code_editor_home' %}">Code Editor</a>
               <a class="dropdown-item" href="{% url 'chat_home' %}">Chat</a>
-              <a class="dropdown-item" href="{% url 'donation_home' %}">Donate</a>
+              <a class="dropdown-item" href="{% url 'donate' %}">Donate</a>
+              <a class="dropdown-item" href="{% url 'product' %}">Product Page</a>
+              {% comment %} <a class="dropdown-item" href="{% url 'store_landing' %}">Ecommerce</a> {% endcomment %}
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
@@ -56,6 +59,13 @@
         </form>
       </div>
     </nav>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">
+          {{message}}
+        </div>
+      {% endfor %}
+    {% endif %}
 
     {% block content %}{% endblock %}
     

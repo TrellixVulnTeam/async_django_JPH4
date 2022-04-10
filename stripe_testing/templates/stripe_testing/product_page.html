@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock extra_css %}
+{% block content %}
+
+<div class='d-flex justify-content-center'>
+    <div class="product">
+        <img src="https://i.imgur.com/EHyR2nP.png" alt="The cover of Stubborn Attachments" />
+        <div class="description">
+          <h3>Stubborn Attachments</h3>
+          <h5>$20.00</h5>
+        </div>
+        <form action="{% url 'charge' %}" method="POST">
+            {% csrf_token %}
+          <button type="submit" id="checkout-button">Checkout</button>
+        </form>
+      </div>
+</div>
+{% endblock content %}
+
+
+
+
+{% block extra_js %}
+{% endblock extra_js %}

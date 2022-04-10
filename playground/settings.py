@@ -186,7 +186,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-SITE_ID = 1
+SITE_ID = 3
 LOGIN_REDIRECT_URL = '/'
 
 
